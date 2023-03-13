@@ -5,6 +5,7 @@ import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import { sign } from "crypto";
 
 const Auth = () =>{
     const router = useRouter();
@@ -71,7 +72,8 @@ const Auth = () =>{
                         {variant === 'login' ? 'Login' :'Sign Up'}
                     </button>
                     <div className="flex flex-row item-center gap-4 mt-8 justify-center">
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                        <div onClick={() => signIn('google', {callbackUrl: '/'})}
+                         className="w-10 h-10 rounded-full bg-white flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                             <FcGoogle size={30} />
                         </div>
                         <div onClick={() => signIn('github', {callbackUrl: '/'})}
