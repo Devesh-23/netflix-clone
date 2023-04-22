@@ -8,7 +8,7 @@ interface InputProps {
     type?: string;
   }
 
-
+//take the input ans use that data 
 const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
   return (
     <div className="relative">
