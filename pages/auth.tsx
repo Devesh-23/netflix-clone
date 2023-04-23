@@ -8,6 +8,10 @@ import { FaGithub } from 'react-icons/fa';
 import { NextPageContext } from "next";
 
 
+//backend part updated 
+
+
+
 export async function getServerSideProps(context: NextPageContext) {
     const session = await getSession(context);
   
